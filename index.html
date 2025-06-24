@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Owl Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <style>
+    body {
+      background-color: #1a8fb4;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      margin: 0;
+      padding: 0;
+    }
+    .owl {
+      margin: 40px auto 0 auto;
+      width: 211px;
+      height: 108px;
+      background-image: url('https://dash.readme.io/img/owl-login.png');
+      position: relative;
+    }
+    .owl .hand {
+      width: 34px;
+      height: 34px;
+      border-radius: 40px;
+      background-color: #472d20;
+      transform: scaleY(0.6);
+      position: absolute;
+      left: 14px;
+      bottom: -8px;
+      transition: 0.3s ease-out;
+    }
+    .owl .hand.password {
+      transform: translateX(42px) translateY(-15px) scale(0.7);
+    }
+    .owl .hand.hand-r {
+      left: 170px;
+    }
+    .owl .hand.hand-r.password {
+      transform: translateX(-42px) translateY(-15px) scale(0.7);
+    }
+    .owl .arms {
+      position: absolute;
+      top: 58px;
+      height: 41px;
+      width: 100%;
+      overflow: hidden;
+    }
+    .owl .arms .arm {
+      width: 40px;
+      height: 65px;
+      background-image: url('https://dash.readme.io/img/owl-login-arm.png');
+      position: absolute;
+      left: 20px;
+      top: 40px;
+      transition: 0.3s ease-out;
+    }
+    .owl .arms .arm.password {
+      transform: translateX(40px) translateY(-40px);
+    }
+    .owl .arms .arm.arm-r {
+      left: 158px;
+      transform: scaleX(-1);
+    }
+    .owl .arms .arm.arm-r.password {
+      transform: translateX(-40px) translateY(-40px) scaleX(-1);
+    }
+    .form {
+      margin: auto;
+      margin-top: -9px;
+      padding: 30px;
+      background-color: white;
+      width: 175px;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+    }
+    .form .control {
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .form .control label {
+      position: absolute;
+      font-size: 16px;
+      top: 11px;
+      left: 9px;
+      color: rgba(0,0,0,0.3);
+    }
+    .form .control input {
+      width: 100%;
+      padding: 9px 6px 9px 30px;
+      border-radius: 4px;
+      border: 1px solid #cccccc;
+      font-size: 14px;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .form .control input:focus {
+      border: 1.5px solid #1a8fb4;
+    }
+  </style>
+</head>
+<body>
+  <div class="owl">
+    <div class="hand"></div>
+    <div class="hand hand-r"></div>
+    <div class="arms">
+      <div class="arm"></div>
+      <div class="arm arm-r"></div>
+    </div>
+  </div>
+  <div class="form">
+    <div class="control">
+      <label for="email" class="fa fa-envelope"></label>
+      <input id="email" placeholder="Email" type="email">
+    </div>
+    <div class="control">
+      <label for="password" class="fa fa-asterisk"></label>
+      <input id="password" placeholder="Password" type="password">
+    </div>
+  </div>
+  <script>
+    // Add/remove 'password' class on owl elements when password input is focused
+    const passwordInput = document.getElementById('password');
+    passwordInput.addEventListener('focus', function() {
+      document.querySelectorAll('.hand, .arm').forEach(function(el) {
+        el.classList.add('password');
+      });
+    });
+    passwordInput.addEventListener('blur', function() {
+      document.querySelectorAll('.hand, .arm').forEach(function(el) {
+        el.classList.remove('password');
+      });
+    });
+  </script>
+</body>
+</html>
