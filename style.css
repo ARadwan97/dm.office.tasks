@@ -90,33 +90,3 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background: #32a53b;
 }
-
-/* Bird Animation */
-#bird .bird-left-wing {
-  transform-origin: 55px 90px;
-  animation: flap-left 2s infinite ease-in-out;
-}
-#bird .bird-right-wing {
-  transform-origin: 105px 70px;
-  animation: flap-right 2s infinite ease-in-out;
-}
-#bird .bird-head {
-  transform-origin: 120px 47px;
-  animation: head-bob 2s infinite ease-in-out;
-}
-
-@keyframes flap-left {
-  0%, 100% { transform: rotate(-10deg); }
-  50% { transform: rotate(20deg); }
-}
-@keyframes flap-right {
-  0%, 100% { transform: rotate(10deg);}
-  50% { transform: rotate(-15deg);}
-}
-@keyframes head-bob {
-  0%, 100% { transform: rotate(0deg);}
-  20% { transform: rotate(-5deg);}
-  40% { transform: rotate(2deg);}
-  60% { transform: rotate(-2deg);}
-  80% { transform: rotate(1deg);}
-}
