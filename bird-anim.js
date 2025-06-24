@@ -1,1 +1,0 @@
-// No JS needed for this simple SVG animation, but this file is ready for advanced effects
